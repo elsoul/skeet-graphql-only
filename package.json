@@ -1,0 +1,34 @@
+{
+  "name": "skeet-graphql-only",
+  "version": "1.3.0",
+  "description": "Skeet Framework Boilerplate with GraphQL Only",
+  "repository": "https://github.com/elsoul/skeet-graphql.git",
+  "author": "ELSOUL LABO B.V.",
+  "license": "Apache-2.0",
+  "private": false,
+  "scripts": {
+    "format": "prettier --write --ignore-unknown .",
+    "lint": "eslint --ext .ts,.tsx --fix .",
+    "skeet": "run-p skeet:*",
+    "skeet:graphql": "yarn --cwd ./graphql dev",
+    "update:packages": "ncu -u -x 'node-fetch,glob' && yarn",
+    "db:deploy": "yarn --cwd ./graphql db:deploy",
+    "db:seed": "yarn --cwd ./graphql db:seed",
+    "dev": "run-p 'dev:*'"
+  },
+  "dependencies": {},
+  "devDependencies": {
+    "dotenv": "16.3.1",
+    "esbuild": "0.19.3",
+    "eslint": "8.49.0",
+    "eslint-config-prettier": "9.0.0",
+    "nodemon": "3.0.1",
+    "npm-check-updates": "16.14.4",
+    "npm-run-all": "4.1.5",
+    "prettier": "3.0.3",
+    "ts-jest": "29.1.1",
+    "ts-loader": "9.4.4",
+    "tsconfig-paths": "4.2.0",
+    "typescript": "5.2.2"
+  }
+}
