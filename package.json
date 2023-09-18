@@ -14,7 +14,10 @@
     "update:packages": "ncu -u -x 'node-fetch,glob' && yarn",
     "db:deploy": "yarn --cwd ./graphql db:deploy",
     "db:seed": "yarn --cwd ./graphql db:seed",
-    "dev": "run-p 'dev:*'"
+    "dev": "run-p 'dev:*'",
+    "docker:build": "cd ./graphql && docker build -f Dockerfile.dev -t skeet-graphql .",
+    "docker:run": "docker run -p 3000:3000 --env-file ./graphql/.env -d --rm --name skeet-graphql skeet-graphql",
+    "docker:rm": "docker rm -f skeet-graphql"
   },
   "dependencies": {},
   "devDependencies": {
